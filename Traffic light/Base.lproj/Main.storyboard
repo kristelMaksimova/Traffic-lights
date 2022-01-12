@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +11,76 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Traffic_light" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="akM-kO-stX">
+                                <rect key="frame" x="137.5" y="17" width="100" height="367.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-2b-0vY">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.055246652489999999" blue="0.037895586219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="JZk-2b-0vY" secondAttribute="height" multiplier="1:1" id="X6c-FE-MY2"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-X0-cH3">
+                                        <rect key="frame" x="0.0" y="134" width="100" height="99.5"/>
+                                        <color key="backgroundColor" red="1" green="0.95546735220000001" blue="0.051677783380000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfz-SA-mkO">
+                                        <rect key="frame" x="0.0" y="267.5" width="100" height="100"/>
+                                        <color key="backgroundColor" red="0.0632337813" green="0.78039215689999997" blue="0.10370838490000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Tfz-SA-mkO" firstAttribute="width" secondItem="Tfz-SA-mkO" secondAttribute="height" multiplier="1:1" id="12p-Bq-Iuv"/>
+                                    <constraint firstItem="Yeg-X0-cH3" firstAttribute="width" secondItem="Yeg-X0-cH3" secondAttribute="height" multiplier="1:1" id="ES1-zD-a2b"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooZ-VP-iW2">
+                                <rect key="frame" x="130" y="582" width="115" height="49"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ooZ-VP-iW2" secondAttribute="height" multiplier="115:49" id="KnQ-ua-Zs0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="START">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="RK3-Gz-eCK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ooZ-VP-iW2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Wye-s6-yu1"/>
+                            <constraint firstItem="akM-kO-stX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="YrI-PF-sHK"/>
+                            <constraint firstItem="akM-kO-stX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ero-fQ-xfb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ooZ-VP-iW2" secondAttribute="bottom" constant="36" id="f58-UY-kdg"/>
+                            <constraint firstItem="akM-kO-stX" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="67:448" id="fsv-2n-p71"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenLight" destination="Tfz-SA-mkO" id="Lbp-UK-2Ik"/>
+                        <outlet property="redLight" destination="JZk-2b-0vY" id="jjB-0k-HHW"/>
+                        <outlet property="startButton" destination="ooZ-VP-iW2" id="xSL-W2-aht"/>
+                        <outlet property="yellowLight" destination="Yeg-X0-cH3" id="jmC-oi-RKm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.75" y="80"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
